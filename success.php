@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
     $specialty = $_POST['specialty'];
 
     //Call function to insert and track if succes or not
-    $isSuccess = $crud->insert($firstname, $lastname, $dob, $email, $contact, $specialty);
+    $isSuccess = $crud->insertAttendees($firstname, $lastname, $dob, $email, $contact, $specialty);
 
     if ($isSuccess) {
         echo '<h1 class="text-center text-success"> You have succesfully registered!</h1>';

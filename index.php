@@ -4,6 +4,8 @@ $title = 'Index';
 require_once 'includes/header.php';
 require_once 'db/conn.php';
 
+$results = $crud->getSpecialties();
+
 ?>
 
 <!-- FORM DESIGN NOTES
@@ -40,12 +42,19 @@ require_once 'db/conn.php';
         <label for="specialty" class="form-label">Specialty</label>
         <!-- <input type="text" class="form-select" id="specialty" name="specialty" aria-describedby="specialty"> -->
         <select class="form-select" aria-label="specialty" id="specialty" name="specialty">
-
-            <option selected>Open this select menu</option>
+              
+        <!-- HARD CODED OPTIONS -->
+            <!-- <option selected>Open this select menu</option>
             <option value="1">Database Admin</option>
             <option value="2">Software Developer</option>
             <option value="3">Web Administrator</option>
-            <option value="4">Other</option>
+            <option value="4">Other</option> -->
+                <?php while($r = $results->fetch(PDO::FETCH_ASSOC)) {?>
+
+                    <option  value=" <?php echo $r['specialty_id']; ?>" ><?php echo $r['name']; ?>  </option>
+                                         
+                <?php } ?>
+
         </select>
     </div>
 
