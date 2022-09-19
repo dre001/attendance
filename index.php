@@ -23,13 +23,13 @@ $results = $crud->getSpecialties();
 <form method="post" action="success.php">
     <div class="mb-3">
         <label for="firstname" class="form-label">First Name</label>
-        <input type="text" class="form-control" id="firstname" name="firstname" aria-describedby="firstname" placeholder="First Name Only">
+        <input required type="text" class="form-control" id="firstname" name="firstname" aria-describedby="firstname" placeholder="First Name Only">
         <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
     </div>
 
     <div class="mb-3">
         <label for="lastname" class="form-label">Last Name</label>
-        <input type="text" class="form-control" id="lastname" name="lastname" aria-describedby="lastname" placeholder="Last Name Only">
+        <input required type="text" class="form-control" id="lastname" name="lastname" aria-describedby="lastname" placeholder="Last Name Only">
         <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
     </div>
 
@@ -60,7 +60,7 @@ $results = $crud->getSpecialties();
 
     <div class="mb-3">
         <label for="email" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+        <input required type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
     </div>
 

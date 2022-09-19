@@ -4,6 +4,7 @@ $title = 'Success';
 require_once 'includes/header.php';
 require_once 'db/conn.php';
 
+
 if (isset($_POST['submit'])) {
     //extract values from the $POST array
     $firstname = $_POST['firstname'];
@@ -17,9 +18,11 @@ if (isset($_POST['submit'])) {
     $isSuccess = $crud->insertAttendees($firstname, $lastname, $dob, $email, $contact, $specialty);
 
     if ($isSuccess) {
-        echo '<h1 class="text-center text-success"> You have succesfully registered!</h1>';
+        //echo '<h1 class="text-center text-success"> You have succesfully registered!</h1>';
+        include 'includes/successmessage.php'; //generic Success Message
     } else {
-        echo '<h1 class="text-center text-danger"> ERROR when Preocessing</h1>';
+        //echo '<h1 class="text-center text-danger"> ERROR when Preocessing</h1>';
+        include 'includes/errormessage.php'; //generic Error Message
     }
 }
 
@@ -110,6 +113,11 @@ if (isset($_POST['submit'])) {
     </div>
 </div>
 
+<br/>
+        
+        <a href="viewrecords.php" class="btn btn-info">Back to List</a>
+        <!-- <a href="edit.php?id=<?php echo $result['attendee_id'] ?>" class="btn btn-warning">Edit</a> -->
+        <a onclick="return confirm('Are you sure you want to delete');" href="delete.php?id=<?php echo $result['attendee_id'] ?>" class="btn btn-danger">Delete</a>
 
 <br>
 <br>

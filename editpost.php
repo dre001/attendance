@@ -25,12 +25,14 @@ $title = 'edit post';
         header("Location: viewrecords.php");
     }
     else{ 
-        echo 'error';
+       // echo 'error';
+       include 'includes/errormessage.php'; //generic Error Message
 
     }
 }
     else{
-        echo 'error';
+        //echo 'error';
+        include 'includes/errormessage.php'; //generic Error Message
 }
 
 ?>

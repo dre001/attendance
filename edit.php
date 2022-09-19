@@ -9,7 +9,9 @@ $results = $crud->getSpecialties();
 
 //EDIT
 if (!isset($_GET['id'])) {
-    echo 'error';
+   // echo 'error';
+   include 'includes/errormessage.php'; //generic Error Message
+   header("Location: viewrecords.php ");
 } else {
     $id = $_GET['id'];
     $attendee = $crud->getAttendeeDetails($id);
