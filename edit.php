@@ -25,7 +25,7 @@ if (!isset($_GET['id'])) {
     <form method="post" action="editpost.php">
 
         <div class="mb-3">
-        <input type="hidden" name="id" value="<?php echo $attendee['attendee_id'] ?>"
+        <input type="hidden" name="id" value="<?php echo $attendee['attendee_id'] ?>" />
         
         <label for="firstname" class="form-label">First Name</label>
 

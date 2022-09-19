@@ -1,6 +1,6 @@
 <?php
+$title = 'edit post';
     require_once 'includes/header.php';
-
     require_once 'db/conn.php';
 
     //Get values from post operation
@@ -34,3 +34,4 @@
 }
 
 ?>
+<?php require_once 'includes/footer.php'; ?>
