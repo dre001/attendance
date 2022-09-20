@@ -90,13 +90,19 @@
                // $sql = "SELECT * FROM `attendee` a inner join specialties s on a.specialty_id = s.specialty_id where
                 //attendee_id = :id";
 
-                $sql = "select * from attendee a inner join specialties s on a.specialty_id = s.specialty_id where
+                try {
+                    $sql = "select * from attendee a inner join specialties s on a.specialty_id = s.specialty_id where
                 attendee_id = :id";
                 $stmt = $this->db->prepare($sql);
                 $stmt->bindparam(':id', $id);
                 $stmt->execute();
                 $result = $stmt->fetch();
                 return $result;
+                } catch (PDOException $e) {
+                    echo $e->getMessage(); //"e" represents the object of a class
+                    return false;
+                }
+                
             }
 
 
@@ -123,7 +129,7 @@
                     $sql = "SELECT * FROM `specialties`";
                 $result = $this->db->query($sql);
                 return $result;
-                
+
                 } catch (PDOException $e) {
                     echo $e->getMessage(); //"e" represents the object of a class
                     return false;
