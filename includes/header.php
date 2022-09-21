@@ -1,3 +1,9 @@
+<?php 
+//This includes the session file. This file contains code that starts/resumes a session
+// By having it in the header file, it will be included on every page, allowing session capability to be used on every page across the website
+include_once 'includes/session.php'
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -33,12 +39,19 @@
       <span class="navbar-toggler-icon"></span>
     </button>  
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+
+
+      <div class="navbar-nav m-auto ">
+        <a class="nav-link active" aria-current="page" href="index.php">Home </a>
         <a class="nav-link" href="viewrecords.php">View Attendees</a>
         <!-- <a class="nav-link" href="#">Pricing</a>
         <a class="nav-link disabled">Disabled</a> -->
-      </div>
+    </div>
+    <div class="navbar-nav ml-auto">
+        <a class="nav-link active" aria-current="page" href="login.php">Login</a>
+        
+      
+    </div>
     </div>
   </div>
 </nav>
