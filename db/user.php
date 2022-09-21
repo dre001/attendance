@@ -47,7 +47,7 @@
          public function getUser($username,$password){
 
             try {
-                $sql = "select * from users WHERE username = :username AND password = :password";
+                $sql = "select * from users where username = :username AND password = :password";
             $stmt = $this->db->prepare($sql);
             $stmt->bindparam(':username', $username);
             $stmt->bindparam(':password', $password);
