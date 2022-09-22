@@ -3,6 +3,7 @@
 $title = 'Success';
 require_once 'includes/header.php';
 require_once 'db/conn.php';
+require_once 'sendemail.php'; //Placed in for AUTOMATIC Email
 
 
 if (isset($_POST['submit'])) {
@@ -17,7 +18,19 @@ if (isset($_POST['submit'])) {
     //Call function to insert and track if succes or not
     $isSuccess = $crud->insertAttendees($firstname, $lastname, $dob, $email, $contact, $specialty);
 
+    
+    //FUNCTION ADDED FOR CONFIRMATION EMAILS
+    $specialtyName = $crud->getSpecialtyById($specialty);
+
+
+
     if ($isSuccess) {
+
+        //Placed in for AUTOMATIC Email
+        SendEmail::SendMail($email, 'Welcome to IT Conference 2022' , 'You have successfuly registered for his year\'s IT Conference'); //Placed in for automatic Email
+        
+        
+
         //echo '<h1 class="text-center text-success"> You have succesfully registered!</h1>';
         include 'includes/successmessage.php'; //generic Success Message
     } else {
@@ -87,7 +100,8 @@ if (isset($_POST['submit'])) {
         </h5>
         <h6 class="card-subtitle mb-2 text-muted">
             <?php
-            echo $_POST['specialty'];
+            //echo $_POST['specialty']; THIS WAS THERE
+            echo $specialtyName['name']; //Placed here For Email Confirmation <<<<<------CHECKKKK
             ?>
         </h6>
         <p class="card-text">

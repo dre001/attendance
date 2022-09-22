@@ -139,6 +139,29 @@
             }
         
          
+            //FUNCTION PLACED IN FOR THE CONFIRMATION EMAIL
+            public function getSpecialtyById($id){
+
+                try {
+                    $sql = "SELECT * FROM `specialties` where specialty_id = :id";
+                    $stmt = $this->db->prepare($sql);
+                    $stmt->bindparam(':id', $id);
+                    $stmt->execute();
+                    
+                    $result = $stmt->fetch();
+                    return $result;
+
+                } catch (PDOException $e) {
+                    echo $e->getMessage(); //"e" represents the object of a class
+                    return false;
+                }
+            
+                
+            }
+
+
+
+
   
     }
 ?>
