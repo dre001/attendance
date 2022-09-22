@@ -2,6 +2,7 @@
 
 $title = 'Edit Record';
 require_once 'includes/header.php';
+require_once 'includes/auth_check.php';
 require_once 'db/conn.php';
 
 $results = $crud->getSpecialties();
@@ -43,7 +44,7 @@ if (!isset($_GET['id'])) {
 
         <div class="mb-3">
             <label for="dob" class="form-label">Date of Birth</label>
-            <input type="text" class="form-control" value="<?php echo $attendee['dateofbirth'] ?>" id="dateofbirth" name="dob">
+            <input type="text" class="form-control" value="<?php echo $attendee['dateofbirth'] ?>" id="dob" name="dob">
         </div>
 
 
