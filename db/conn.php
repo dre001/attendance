@@ -24,8 +24,9 @@
 
 
 //000Webhost
-$host = '000webhost.com/';
-$db = ' id19622731_attendanceregister';
+//$host = '000webhost.com';
+$host = 'localhost';
+$db = 'id19622731_attendanceregister';
 $user = 'id19622731_attendanceregister001';
 $pass = '!d>*6XESoe(#llQX';
 $charset = 'utf8mb4';
