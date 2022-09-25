@@ -15,10 +15,21 @@ if (isset($_POST['submit'])) {
     $contact = $_POST['phone'];
     $specialty = $_POST['specialty'];
 
-    //Call function to insert and track if succes or not
-    $isSuccess = $crud->insertAttendees($firstname, $lastname, $dob, $email, $contact, $specialty);
 
-    
+
+    //Uploading Images
+    $orig_file = $_FILES["avatar"]["tmp_name"];
+    $ext = pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
+    $target_dir = 'uploads/';
+    $destination = "$target_dir$contact.$ext";
+    move_uploaded_file($orig_file,$destination);
+
+    //exit();  //THIS STOP THE CODE 
+
+    //Call function to insert and track if succes or not
+    $isSuccess = $crud->insertAttendees($firstname, $lastname, $dob, $email, $contact, $specialty, $destination);
+
+
     //FUNCTION ADDED FOR CONFIRMATION EMAILS
     $specialtyName = $crud->getSpecialtyById($specialty);
 
@@ -27,9 +38,9 @@ if (isset($_POST['submit'])) {
     if ($isSuccess) {
 
         //Placed in for AUTOMATIC Email
-        SendEmail::SendMail($email, 'Welcome to IT Conference 2022' , 'You have successfuly registered for his year\'s IT Conference'); //Placed in for automatic Email
-        
-        
+        SendEmail::SendMail($email, 'Welcome to IT Conference 2022', 'You have successfuly registered for his year\'s IT Conference'); //Placed in for automatic Email
+
+
 
         //echo '<h1 class="text-center text-success"> You have succesfully registered!</h1>';
         include 'includes/successmessage.php'; //generic Success Message
@@ -90,6 +101,7 @@ if (isset($_POST['submit'])) {
 //    echo $_GET['phone'];
 
 ?>
+<img src="<?php echo $destination; ?>" class="rounded-circle" style="width: 50%; height: 50%"/>
 
 <div class="card" style="width: 18rem;">
     <div class="card-body">
@@ -127,11 +139,11 @@ if (isset($_POST['submit'])) {
     </div>
 </div>
 
-<br/>
-        
-        <a href="viewrecords.php" class="btn btn-info">Back to List</a>
-        <!-- <a href="edit.php?id=<?php echo $result['attendee_id'] ?>" class="btn btn-warning">Edit</a> -->
-        <a onclick="return confirm('Are you sure you want to delete');" href="delete.php?id=<?php echo $result['attendee_id'] ?>" class="btn btn-danger">Delete</a>
+<br />
+
+<a href="viewrecords.php" class="btn btn-info">Back to List</a>
+<!-- <a href="edit.php?id=<?php echo $result['attendee_id'] ?>" class="btn btn-warning">Edit</a> -->
+<a onclick="return confirm('Are you sure you want to delete');" href="delete.php?id=<?php echo $result['attendee_id'] ?>" class="btn btn-danger">Delete</a>
 
 <br>
 <br>

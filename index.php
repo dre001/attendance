@@ -20,7 +20,7 @@ $results = $crud->getSpecialties();
 
 
 
-<form method="post" action="success.php">
+<form method="post" enctype="multipart/form-data" action="success.php" >
     <div class="mb-3">
         <label for="firstname" class="form-label">First Name</label>
         <input required type="text" class="form-control" id="firstname" name="firstname" aria-describedby="firstname" placeholder="First Name Only">
@@ -69,6 +69,21 @@ $results = $crud->getSpecialties();
         <input type="text" class="form-control" id="phone" name="phone" aria-describedby="phoneHelp">
         <div id="phoneHelp" class="form-text">We'll never share your contact number.</div>
     </div>
+<br>
+
+
+                        <!-- TO UPLOAD IMAGE -->
+
+    <div class="custom-file">
+        
+        <input type="file" accept="image/*" class="custom-file-input" id="avatar" name="avatar">
+        <label class="custom-file-label" for="avatar"></label>
+        <div id="avatar" class="form-text text-success">Uploading File is Optional.</div>
+        <!-- <small id="avatar" class="form-text text-success">Uploading File is Optional.</small> -->
+    </div>
+
+<br>
+<br>
 
 
     <button type="submit" name="submit" class="btn btn-success btn-block">Submit</button>
