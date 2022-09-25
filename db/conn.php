@@ -9,11 +9,11 @@
 
 
 //Remote Database Connection
-// $host = 'sql5.freesqldatabase.com';
-// $db = 'sql5521121';
-// $user = 'sql5521121';
-// $pass = 'p9jH8iKu1G';
-// $charset = 'utf8mb4';
+$host = 'sql5.freesqldatabase.com';
+$db = 'sql5521121';
+$user = 'sql5521121';
+$pass = 'p9jH8iKu1G';
+$charset = 'utf8mb4';
 
 
 // $host = 'remotemysql.com';
@@ -25,11 +25,12 @@
 
 //000Webhost
 //$host = '000webhost.com';
-$host = 'localhost';
-$db = 'id19622731_attendanceregister';
-$user = 'id19622731_attendanceregister001';
-$pass = '!d>*6XESoe(#llQX';
-$charset = 'utf8mb4';
+//$host = 'localhost';
+// $host = '127.0.0.1';
+// $db = 'id19622731_attendanceregister';
+// $user = 'id19622731_attendanceregister001';
+// $pass = '!d>*6XESoe(#llQX';
+// $charset = 'utf8mb4';
 
 
 
