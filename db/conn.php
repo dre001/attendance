@@ -30,7 +30,7 @@ try {
     //echo 'Sync with Database';
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-
+    die($e->getMessage());
     throw new PDOException($e->getMessage());
 }
 require_once 'crud.php';
