@@ -16,11 +16,20 @@
 // $charset = 'utf8mb4';
 
 
-$host = 'remotemysql.com';
-$db = ' lxfglIJlle';
-$user = 'lxfglIJlle';
-$pass = 'r4An7gky7c';
+// $host = 'remotemysql.com';
+// $db = ' lxfglIJlle';
+// $user = 'lxfglIJlle';
+// $pass = 'r4An7gky7c';
+// $charset = 'utf8mb4';
+
+
+//000Webhost
+$host = '000webhost.com/';
+$db = ' id19622731_attendanceregister';
+$user = 'id19622731_attendanceregister001';
+$pass = '!d>*6XESoe(#llQX';
 $charset = 'utf8mb4';
+
 
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
