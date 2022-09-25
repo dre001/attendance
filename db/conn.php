@@ -1,11 +1,11 @@
 <?php
 
 //LOCAL HOST CONNECTION
-$host = '127.0.0.1';
-$db = 'attendance_db';
-$user = 'root';
-$pass = '';
-$charset = 'utf8mb4';
+// $host = '127.0.0.1';
+// $db = 'attendance_db';
+// $user = 'root';
+// $pass = '';
+// $charset = 'utf8mb4';
 
 
 //Remote Database Connection
@@ -16,11 +16,11 @@ $charset = 'utf8mb4';
 // $charset = 'utf8mb4';
 
 
-// $host = 'remotemysql.com';
-// $db = ' lxfglIJlle';
-// $user = 'lxfglIJlle';
-// $pass = '5bF8kjiI8v';
-// $charset = 'utf8mb4';
+$host = 'remotemysql.com';
+$db = ' lxfglIJlle';
+$user = 'lxfglIJlle';
+$pass = '5bF8kjiI8v';
+$charset = 'utf8mb4';
 
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
