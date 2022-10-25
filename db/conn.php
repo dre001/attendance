@@ -9,11 +9,11 @@
 
 
 //Remote Database Connection
-$host = 'sql5.freesqldatabase.com';
-$db = 'sql5521121';
-$user = 'sql5521121';
-$pass = 'p9jH8iKu1G';
-$charset = 'utf8mb4';
+// $host = 'sql5.freesqldatabase.com';
+// $db = 'sql5521121';
+// $user = 'sql5521121';
+// $pass = 'p9jH8iKu1G';
+// $charset = 'utf8mb4';
 
 
 // $host = 'remotemysql.com';
@@ -31,6 +31,15 @@ $charset = 'utf8mb4';
 // $user = 'id19622731_attendanceregister001';
 // $pass = '!d>*6XESoe(#llQX';
 // $charset = 'utf8mb4';
+
+//FREE SQL CONNECTION 1
+$host = 'applied-web.mysql.database.azure.com';
+$db = '';
+$user = 'appliedweb_user@applied-web';
+$pass = 'P@ssword1';
+$charset = 'utf8mb4';
+
+
 
 
 
