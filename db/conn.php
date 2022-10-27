@@ -1,11 +1,11 @@
 <?php
 
 //LOCAL HOST CONNECTION
-// $host = '127.0.0.1';
-// $db = 'attendance_db';
-// $user = 'root';
-// $pass = '';
-// $charset = 'utf8mb4';
+$host = '127.0.0.1';
+$db = 'attendance_db';
+$user = 'root';
+$pass = '';
+$charset = 'utf8mb4';
 
 
 //Remote Database Connection
@@ -34,13 +34,18 @@
 
 //FREE SQL CONNECTION 1
 $host = 'applied-web.mysql.database.azure.com';
-$db = '';
+$db = 'attendee_andregraham';
 $user = 'appliedweb_user@applied-web';
 $pass = 'P@ssword1';
 $charset = 'utf8mb4';
 
 
-
+//EPIZ HOSTING
+// $host = 'sql310.epizy.com';
+// $db = 'epiz_32868722_attendee_ag_test';
+// $user = 'epiz_32868722';
+// $pass = 'XYDmKvvR0lQa';
+// $charset = 'utf8mb4';
 
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
